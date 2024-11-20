@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "cuentas.apps.CuentasConfig",
     "docs.apps.DocsConfig",
     "categorias.apps.CategoriasConfig",
+    "transacciones.apps.TransaccionesConfig",
 ]
 
 MIDDLEWARE = [

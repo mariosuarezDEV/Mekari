@@ -22,6 +22,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("cuentas/api/", include("cuentas.urls")),
     path("categorias/api/", include("categorias.urls")),
+    path("transacciones/api/", include("transacciones.urls")),
     # Autehntication of rest_framework
     path("api-auth/", include("rest_framework.urls")),
     # Documentation
