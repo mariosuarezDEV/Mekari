@@ -6,13 +6,13 @@ services:
     container_name: mysql_container
     environment:
       MYSQL_ROOT_PASSWORD: edqnLMCSf31. # Cambia esta contraseña
-      MYSQL_DATABASE: prismend # Nombre de la base de datos inicial
+      MYSQL_DATABASE: mekari # Nombre de la base de datos inicial
       MYSQL_USER: lmsuarez # Nombre de usuario
       MYSQL_PASSWORD: edqnLMCSf31. # Contraseña del usuario
     ports:
       - "3306:3306" # Exponer puerto 3306
     volumes:
-      - prismend:/var/lib/mysql # Volumen para persistir datos
+      - mekari:/var/lib/mysql # Volumen para persistir datos
 
 volumes:
-  prismend:
+  mekari:
