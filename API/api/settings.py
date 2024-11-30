@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     "compras.apps.ComprasConfig",
     "contabilidad.apps.ContabilidadConfig",
     "administracion.apps.AdministracionConfig",
+    "empresa.apps.EmpresaConfig",
+    "docs.apps.DocsConfig",
 ]
 
 MIDDLEWARE = [
@@ -115,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "es-es"
 
 TIME_ZONE = "UTC"
 
@@ -135,14 +137,25 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 REST_FRAMEWORK = {
+    # Autenticación de la API
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.BasicAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ],
+    # Documentación de la API
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     "DEFAULT_THROTTLE_CLASSES": [
         "rest_framework.throttling.AnonRateThrottle",
         "rest_framework.throttling.UserRateThrottle",
     ],
+    # Throttle rates de la API
     "DEFAULT_THROTTLE_RATES": {"anon": "20/hour", "user": "1000/day"},  # 480 Al día
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Mekari API",
+    "DESCRIPTION": "API de Mekari",
+    "VERSION": "0.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    # OTHER SETTINGS
 }
