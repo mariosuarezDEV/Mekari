@@ -100,11 +100,9 @@ class Persona(models.Model):
     )
 
     # Informacion de contacto
-    email = models.EmailField(
-        null=False, blank=False, verbose_name="Correo electrónico"
-    )
+    email = models.EmailField(null=True, blank=True, verbose_name="Correo electrónico")
     telefono = models.CharField(
-        max_length=15, null=False, blank=False, verbose_name="Número de teléfono"
+        max_length=15, null=True, blank=True, verbose_name="Número de teléfono"
     )
 
     # Información de la dirección
@@ -211,6 +209,15 @@ class Empleado(models.Model):
     )
     fecha_fin = models.DateField(null=True, blank=True, verbose_name="Fecha de fin")
 
+    # Clave de empleado
+    clave = models.IntegerField(
+        null=False,
+        blank=False,
+        verbose_name="Clave de empleado",
+        unique=True,
+        default=0,
+    )
+
     class Meta:
         verbose_name = "Empleado"
         verbose_name_plural = "Empleados"
@@ -299,3 +306,57 @@ class Incidencia(models.Model):
 
     def __str__(self):
         return f"{self.empleado} - {self.clasificacion} - {self.fecha}"
+
+
+class Nomina(models.Model):
+    # Información de la nómina
+    empleado = models.ForeignKey(
+        Empleado, on_delete=models.CASCADE, verbose_name="Empleado"
+    )
+    fecha_inicio = models.DateField(
+        null=False, blank=False, verbose_name="Fecha de inicio"
+    )
+    fecha_fin = models.DateField(null=False, blank=False, verbose_name="Fecha de fin")
+
+    # Información de la nómina
+    subtotal = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        null=False,
+        blank=False,
+        verbose_name="Total de la nómina",
+    )
+
+    # Incidencias positivas
+    bonos = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        null=False,
+        blank=False,
+        verbose_name="Bonos",
+    )
+
+    # Incidencias negativas
+    deducciones = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        null=False,
+        blank=False,
+        verbose_name="Deducciones",
+    )
+
+    # Total de la nómina
+    total = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        null=False,
+        blank=False,
+        verbose_name="Total de la nómina",
+    )
+
+    class Meta:
+        verbose_name = "Nómina"
+        verbose_name_plural = "Nóminas"
+
+    def __str__(self):
+        return f"{self.empleado} - {self.fecha_inicio} - {self.fecha_fin}"
