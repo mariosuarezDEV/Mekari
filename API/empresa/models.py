@@ -20,23 +20,19 @@ class Empresa(models.Model):
     email = models.EmailField(null=True, blank=True, verbose_name="Correo electrónico")
 
     # Dirección
-    calle = models.CharField(
-        max_length=50, null=False, blank=False, verbose_name="Calle"
-    )
-    numero = models.IntegerField(
-        null=False, blank=False, verbose_name="Número exterior"
-    )
-    cp = models.IntegerField(null=False, blank=False, verbose_name="Código Postal")
+    calle = models.CharField(max_length=50, null=True, blank=True, verbose_name="Calle")
+    numero = models.IntegerField(null=True, blank=True, verbose_name="Número exterior")
+    cp = models.IntegerField(null=True, blank=True, verbose_name="Código Postal")
     colonia = models.CharField(
-        max_length=50, null=False, blank=False, verbose_name="Colonia"
+        max_length=50, null=True, blank=True, verbose_name="Colonia"
     )
     ciudad = models.CharField(
-        max_length=50, null=False, blank=False, verbose_name="Ciudad"
+        max_length=50, null=True, blank=True, verbose_name="Ciudad"
     )
     estado = models.CharField(
-        max_length=50, null=False, blank=False, verbose_name="Estado"
+        max_length=50, null=True, blank=True, verbose_name="Estado"
     )
-    pais = models.CharField(max_length=50, null=False, blank=False, verbose_name="País")
+    pais = models.CharField(max_length=50, null=True, blank=True, verbose_name="País")
 
     class Meta:
         verbose_name = "Empresa"
@@ -54,30 +50,24 @@ class Sucursal(models.Model):
 
     # Contacto
     telefono = models.CharField(
-        max_length=15, null=False, blank=False, verbose_name="Número de teléfono"
+        max_length=15, null=True, blank=True, verbose_name="Número de teléfono"
     )
-    email = models.EmailField(
-        null=False, blank=False, verbose_name="Correo electrónico"
-    )
+    email = models.EmailField(null=True, blank=True, verbose_name="Correo electrónico")
 
     # Dirección
-    calle = models.CharField(
-        max_length=50, null=False, blank=False, verbose_name="Calle"
-    )
-    numero = models.IntegerField(
-        null=False, blank=False, verbose_name="Número exterior"
-    )
-    cp = models.IntegerField(null=False, blank=False, verbose_name="Código Postal")
+    calle = models.CharField(max_length=50, null=True, blank=True, verbose_name="Calle")
+    numero = models.IntegerField(null=True, blank=True, verbose_name="Número exterior")
+    cp = models.IntegerField(null=True, blank=True, verbose_name="Código Postal")
     colonia = models.CharField(
-        max_length=50, null=False, blank=False, verbose_name="Colonia"
+        max_length=50, null=True, blank=True, verbose_name="Colonia"
     )
     ciudad = models.CharField(
-        max_length=50, null=False, blank=False, verbose_name="Ciudad"
+        max_length=50, null=True, blank=True, verbose_name="Ciudad"
     )
     estado = models.CharField(
-        max_length=50, null=False, blank=False, verbose_name="Estado"
+        max_length=50, null=True, blank=True, verbose_name="Estado"
     )
-    pais = models.CharField(max_length=50, null=False, blank=False, verbose_name="País")
+    pais = models.CharField(max_length=50, null=True, blank=True, verbose_name="País")
 
     class Meta:
         verbose_name = "Sucursal"

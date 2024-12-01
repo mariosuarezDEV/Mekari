@@ -21,6 +21,7 @@ class SucursalSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sucursal
         fields = [
+            "empresa",
             "nombre",
             "telefono",
             "email",
