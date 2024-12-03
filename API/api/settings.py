@@ -157,5 +157,4 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "API de Mekari",
     "VERSION": "0.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
-    # OTHER SETTINGS
 }

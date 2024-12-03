@@ -22,6 +22,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # Empresa API
     path("empresa/", include("empresa.urls")),
+    # RRHH API
+    path("rrhh/", include("rrhh.urls")),
     # Documentación
     path("docs/", include("docs.urls")),
 ]
