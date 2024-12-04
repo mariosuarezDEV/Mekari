@@ -1,5 +1,5 @@
 export interface PropsCard {
   titulo: string;
-  descripcion: string;
+  descripcion?: string;
   ruta: string;
 }

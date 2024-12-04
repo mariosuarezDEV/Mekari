@@ -7,7 +7,7 @@ import { RouterLink, RouterView  } from 'vue-router'
   <div className="bg-slate-100 h-screen">
 
     <!-- Barra de Navegación -->
-    <div className="flex justify-start items-center gap-10 bg-zinc-900 text-white p-4 shadow-md">
+    <div className="flex justify-start items-center gap-10 bg-zinc-900 text-white p-4 shadow-md rounded-bl-xl">
 
       <h1 className="font-bold text-3xl">Mekari</h1>
 
