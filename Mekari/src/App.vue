@@ -4,25 +4,27 @@ import { RouterLink, RouterView  } from 'vue-router'
 </script>
 
 <template>
-  <div>
+  <div className="bg-slate-100 h-screen">
+
     <!-- Barra de Navegación -->
-     <div className="grid grid-cols-2 bg-gray-700 text-white shadow-lg">
+    <div className="flex justify-start items-center gap-10 bg-zinc-900 text-white p-4 shadow-md">
 
-      <div>
-        <h1 className="font-bold text-2xl p-4">
-          Mekari
-        </h1>
+      <h1 className="font-bold text-3xl">Mekari</h1>
+
+      <div className="flex gap-10">
+        <RouterLink to="/" >Módulos</RouterLink>
+        <RouterLink to="/perfil" >Mi perfil</RouterLink>
+        <RouterLink to="/configuracion" >Configuración</RouterLink>
+        <RouterLink to="/logout" >Cerrar Sesión</RouterLink>
       </div>
 
-      <div className="flex flex-nowrap gap-10 justify-end items-center mr-10">
-        <RouterLink to="/" className="">Dashboard</RouterLink>
-        <RouterLink to="/perfil" className="">Mi perfil</RouterLink>
-        <RouterLink to="/configuracion" className="">Configuración</RouterLink>
-        <RouterLink to="/logout" className="">Cerrar Sesión</RouterLink>
-      </div>
+    </div>
 
-     </div>
-    <RouterView />
+    <!-- Contenido -->
+    <div className="container mx-auto mt-4 p-2">
+      <RouterView />
+    </div>
+
   </div>
 
 </template>
